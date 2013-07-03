@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://ns.adobe.com/air/application/1.5">
+  <filename>iStickMan</filename>
+  <description>iStickMan is like Cube World, except better! Play with your little friend and watch him try to get out of his cube. You can even resize him to fill up your screen or as small as an inch.</description>
+  <copyright>Created by Corbin Davenport</copyright>
+  <customUpdateUI>false</customUpdateUI>
+  <id>iStickMan</id>
+  <version>1.0</version>
+  <initialWindow>
+    <content>index.html</content>
+    <height>192</height>
+    <width>256</width>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+  </initialWindow>
+</application>

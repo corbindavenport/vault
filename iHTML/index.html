@@ -1,0 +1,984 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iHTML 1.3.4</title>
+<script src="SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryCollapsiblePanel.js" type="text/javascript"></script>
+<script language="JavaScript">
+<!-- Hide
+// Copyright 1997 by Geoffery Miller
+// Feel free to use this code anywhere as long as I'm given credit.
+// Email me at GeoRules@aol.com
+//
+
+helpstat = false;
+stprompt = false;
+basic = true;
+
+function thelp(swtch){
+        if (swtch == 1){
+                basic = false;
+                stprompt = false;
+                helpstat = true;
+        }
+        else if (swtch == 0) {
+                helpstat = false;
+                stprompt = false;
+                basic = true;
+        }
+        else if (swtch == 2) {
+                helpstat = false;
+                basic = false;
+                stprompt = true;
+        }
+}
+
+function treset(){
+        if (helpstat){
+                alert("Clears the current code in the iHTML Code Editor.");
+        }
+        else {
+        clear = prompt("Are you sure? (yes/no)",'');
+        clear = clear.toLowerCase();
+        if(clear == 'yes') {
+                document.editor.reset();
+                document.editor.value = "";
+        }
+        }
+}       
+
+function start(){
+        if (helpstat){
+                alert("Elements that appear at the beginning of the document, including <HEAD>.");
+        }
+        else if (basic) {
+        document.editor.area.value = document.editor.area.value + "<html>\n<head>\n<title></title>\n</head>\n<body>\n";
+        }
+        else if (stprompt) {
+                for(;;){
+                        twrite = prompt("Title?",'');
+                        if (twrite != "" && twrite != null){
+                                break;
+                        }
+                        else {
+                                prompt("You must enter a title.",'Ok, sorry.');
+                        }
+                }
+                document.editor.area.value = document.editor.area.value + "<html>\n<head>\n<title>" + twrite + "</title>\n</head>\n<body ";
+                
+                twrite = prompt("Background color? (blank if none)",'');        
+                if (twrite != "" && twrite != null){
+                        twrite = '"' + twrite + '"';
+                        document.editor.area.value = document.editor.area.value + "bgcolor=" + twrite + " ";
+                }
+                
+                twrite = prompt("Background image? (blank if none)",'');                
+                if (twrite != "" && twrite != null){
+                        twrite = '"' + twrite + '"';
+                        document.editor.area.value = document.editor.area.value + "background=" + twrite + " ";
+                }
+                
+                twrite = prompt("Text color? (blank if none)",'');
+                if (twrite != "" && twrite != null){
+                        twrite = '"' + twrite + '"';
+                        document.editor.area.value = document.editor.area.value + "text=" + twrite + " ";
+                }
+                
+                twrite = prompt("Link color? (blank if none)",'');              
+                if (twrite != "" && twrite != null){
+                        twrite = '"' + twrite + '"';
+                        document.editor.area.value = document.editor.area.value + "link=" + twrite + " ";
+                }
+                
+                twrite = prompt("Visited link color? (blank if none)",'');              
+                if (twrite != "" && twrite != null){
+                        twrite = '"' + twrite + '"';            
+                        document.editor.area.value = document.editor.area.value + "vlink=" + twrite + " ";
+                }
+                
+                document.editor.area.value = document.editor.area.value + ">\n";
+        }
+}
+
+function end(){
+        if (helpstat){
+                alert("Adds the the final elements to a document, like </BODY> and </HTML>.");
+        }
+        else {
+        document.editor.area.value = document.editor.area.value + "\n</body>\n</html>\n";  
+        }
+}
+
+function preview(){
+        if (helpstat) {
+                alert("Preview the document. (You can save the document to your computer by clicking Preview and going to File > Save As...)");
+        }
+        else {
+                temp = document.editor.area.value;
+                preWindow= open("", "preWindow","status=no,toolbar=no,menubar=yes");
+                preWindow.document.open();
+                preWindow.document.write(temp);
+                preWindow.document.close();
+        }
+}
+
+function bold() {
+        if (helpstat) {
+                alert("Bold text.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<b></b>";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<b>" + twrite + "</b>";
+                }
+        }
+}
+
+function italic() {
+        if (helpstat) {
+                alert("Italicizes text.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<i></i>";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<i>" + twrite + "</i>";
+                }
+        }
+}
+
+function underline(){
+        if (helpstat) {
+                alert("Underlines text.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<u></u>";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<u>" + twrite + "</u>";
+                }
+        }
+}
+
+function pre(){
+        if (helpstat) {
+                alert("Sets text as preformatted.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<pre></pre>";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<pre>" + twrite + "</pre>";
+                }
+        }
+}
+
+function center(){
+        if (helpstat) {
+                alert("Centers text.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<center></center>";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<center>" + twrite + "</center>";
+                }
+        }
+}
+
+function hbar(){
+        if (helpstat) {
+                alert("Creates a horizontal bar.");
+        }
+        else {
+                document.editor.area.value = document.editor.area.value + "<hr>\n";
+        }
+}
+
+function lbreak(){
+        if (helpstat) {
+                alert("Makes a new line, the equivalent of return or enter.");
+        }
+        else {
+                document.editor.area.value = document.editor.area.value + "<br />\n";
+        }
+}
+
+function pbreak(){
+        if (helpstat) {
+                alert("Makes two new lines, the equivalent of two returns or enters.");
+        }
+        else {
+                document.editor.area.value = document.editor.area.value + "<p>\n";
+        }
+}
+
+function image(){
+        if (helpstat) {
+                alert("Inserts an image.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<img src="">\n';
+        }
+        else if (stprompt) {
+                twrite = prompt("Image location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<img src=' + twrite + '>\n';
+                }
+        }
+}
+
+function aleft(){
+        if (helpstat) {
+                alert("Inserts an image with align left.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<img src="" align=left>\n';
+        }
+        else if (stprompt){
+                twrite = prompt("Image location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<img src=' + twrite + ' align=left>\n';
+                }
+        }
+}
+
+function aright(){
+        if (helpstat) {
+                alert("Inserts an image with align right.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<img src="" align=right>\n';
+        }
+        else if (stprompt) {
+                twrite = prompt("Image location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<img src=' + twrite + ' align=right>\n';
+                }
+        }
+}
+
+function atop(){
+        if (helpstat) {
+                alert("Inserts an image with align top.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<img src=""align=top>\n';
+        }
+        else if (stprompt) {
+                twrite = prompt("Image location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<img src=' + twrite + ' align=top>\n';
+                }
+        }
+}
+
+function amid(){
+        if (helpstat) {
+                alert("Inserts an image with align middle.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<img src="" align=middle>\n';
+        }
+        else if (stprompt) {
+                twrite = prompt("Image location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<img src=' + twrite + ' align=middle>\n';
+                }
+        }
+}
+
+function abottom(){
+        if (helpstat) {
+                alert("Inserts an image with align bottom.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<img src="" align=bottom>\n';
+        }
+        else if (stprompt) {
+                twrite = prompt("Image location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<img src=' + twrite + ' align=bottom>\n';
+                }
+        }
+}
+
+function head1(){
+        if (helpstat) {
+                alert("Creates a header, size 1 (largest size).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<h1></h1>\n";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<h1>" + twrite + "</h1>\n";
+                }
+        }
+}
+
+function head2(){
+        if (helpstat) {
+                alert("Creates a header, size 2 (slightly smaller than 1).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<h2></h2>\n";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<h2>" + twrite + "</h2>\n";
+                }
+        }
+}
+
+function head3(){
+        if (helpstat) {
+                alert("Creates a header, size 3 (slightly smaller than 2).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<h3></h3>\n";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<h3>" + twrite + "</h3>\n";
+                }
+        }
+}
+
+function head4(){
+        if (helpstat) {
+                alert("Creates a header, size 4 (slightly smaller than 3).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<h4></h4>\n";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<h4>" + twrite + "</h4>\n";
+                }
+        }
+}
+
+function head5(){
+        if (helpstat) {
+                alert("Creates a header, size 5 (slightly smaller than 4).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<h5></h5>\n";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<h5>" + twrite + "</h5>\n";
+                }
+        }
+}
+
+function head6(){
+        if (helpstat) {
+                alert("Creates a header, size 6 (smallest size).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<h6></h6>\n";
+        }
+        else if (stprompt) {
+                twrite = prompt("Text?",'');
+                if (twrite != null && twrite != ""){
+                document.editor.area.value = document.editor.area.value + "<h6>" + twrite + "</h6>\n";
+                }
+        }
+}
+
+function linkopen(){
+        if (helpstat) {
+                alert("Begins a link.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<a href="">';
+        }
+        else if (stprompt) {
+                twrite = prompt("File location?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<a href=' + twrite + '>';
+                for(;;){
+                        twrite = prompt("Text?",'');
+                        if (twrite != "" && twrite != null){
+                                break;
+                        }
+                        else {
+                                prompt("You must enter the link text.",'Ok, sorry.');
+                        }
+                        }
+                document.editor.area.value = document.editor.area.value + twrite + '</a>\n';
+                        }
+        }
+}
+
+function linktext(){
+        if (helpstat) {
+                alert("Inserts the text for a link.");
+        }
+        else if (basic) {
+                for(;;){
+                        twrite = prompt("Text?",'');
+                        if (twrite != "" && twrite != null){
+                                break;
+                        }
+                        else {
+                                prompt("You must enter the link text.",'Ok, sorry.');
+                        }
+                }
+                document.editor.area.value = document.editor.area.value + twrite + '\n';
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function linkclose(){
+        if (helpstat) {
+                alert("Closes a link.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "</a>\n";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function anchor(){
+        if (helpstat) {
+                alert("Sets an anchor (e.g. #here).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '<a name="">\n';
+        }
+        else if (stprompt) {
+                twrite = prompt("Anchor name?",'');
+                if (twrite != null && twrite != ""){
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '<a name=' + twrite + '>\n';
+                }
+        }
+}
+
+function orderopen(){
+        if (helpstat) {
+                alert("Starts an ordered list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<ol>\n";
+        }
+        else if (stprompt) {
+                for(i=1;;i++){
+                        twrite = prompt("Item " + i + "? (Blank entry stops.)",'');
+                        if (twrite == "" || twrite == null){
+                                break;
+                        }
+                        if (i == 1){
+                                document.editor.area.value = document.editor.area.value + "<ol>\n";
+                                okeydokey = 1;
+                        }
+                        document.editor.area.value = document.editor.area.value + "<li>" + twrite + "\n";
+                }
+                if (okeydokey) {
+                document.editor.area.value = document.editor.area.value + "</ol>\n";
+                }
+        }
+}
+
+function li(){
+        if (helpstat) {
+                alert("Creates an item in a list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<li>";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function orderclose(){
+        if (helpstat) {
+                alert("Closes an ordered list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "</ol>\n";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function unorderopen(){
+        if (helpstat) {
+                alert("Starts an unordered list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<ul>";
+        }
+        else if (stprompt) {
+                for(i=1;;i++){
+                        twrite = prompt("Item " + i + "? (Blank entry stops.)",'');
+                        if (twrite == "" || twrite == null){
+                                break;
+                        }
+                        if (i == 1){
+                                document.editor.area.value = document.editor.area.value + "<ul>\n";
+                                okeydokey = 1;
+                        }
+                        document.editor.area.value = document.editor.area.value + "<li>" + twrite + "\n";
+                }
+                if (okeydokey) {
+                document.editor.area.value = document.editor.area.value + "</ul>\n";
+                }
+        }
+}
+
+function unorderclose(){
+        if (helpstat) {
+                alert("Closes an unordered list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "</ul>\n";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function defopen(){
+        if (helpstat) {
+                alert("Starts a definition list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<dl>";
+        }
+        else if (stprompt) {
+                for(i=1;;i++){
+                        twrite = prompt("Term " + i + "? (Blank entry stops.)",'');
+                        if (twrite == "" || twrite == null){
+                                break;
+                        }
+                        if (i == 1) {
+                                document.editor.area.value = document.editor.area.value + "<dl>\n";
+                                okeydokey = 1;
+                        }
+                        document.editor.area.value = document.editor.area.value + "<dt>" + twrite + "</dt>\n";
+                        twrite = prompt("Definition" + i + "? (Blank entry stops.)",'');
+                        if (twrite == "" || twrite == null){
+                                break;
+                        }
+                        document.editor.area.value = document.editor.area.value + "<dd>" + twrite + "<dd>\n";
+                }
+                if (okeydokey){
+                document.editor.area.value = document.editor.area.value + "</dl>\n";
+                }
+        }
+}
+
+function defterm(){
+        if (helpstat) {
+                alert("Creates the term in a definition.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<dt>";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function define(){
+        if (helpstat) {
+                alert("Creates the definition.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "<dd>";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function defclose(){    
+        if (helpstat) {
+                alert("Closes a defeinition list.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "</dt>";
+        }
+        else if (stprompt) {
+                alert("Not used in prompt mode.");
+        }
+}
+
+function font(){
+        if (helpstat) {
+                alert("Sets the font.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '';
+        }
+        else if (stprompt) {
+                twrite = prompt("Font?",'');
+                if (twrite != null && twrite != "") {
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '';
+                }
+        }
+}
+
+function fontcolor(){
+        if (helpstat) {
+                alert("Sets the font color.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + '';
+        }
+        else if (stprompt) {
+                twrite = prompt("Color? (hex or name)",'');
+                if (twrite != null && twrite != "") {
+                twrite = '"' + twrite + '"';
+                document.editor.area.value = document.editor.area.value + '';
+        }
+        }
+}
+
+
+function fontsize(){
+        if (helpstat) {
+                alert("Sets the font size (a number 1-7, or +2, -3, etc.).");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "font size=>";
+        }
+        else if (stprompt) {
+                twrite = prompt("Size? (e.g. 1, +5, -2, etc.)",'');
+                if (twrite != null && twrite != "") {
+                document.editor.area.value = document.editor.area.value + "";
+        }
+        }
+}
+
+function fontclose(){
+        if (helpstat) {
+                alert("Closes the font changes.");
+        }
+        else if (basic) {
+                document.editor.area.value = document.editor.area.value + "";
+        }
+        else if (stprompt) {
+                document.editor.area.value = document.editor.area.value + "";
+        }
+}
+
+
+
+
+
+
+
+// --> De-Hide
+</script>
+<link href="SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />
+<link href="main.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryCollapsiblePanel.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+
+</head>
+
+<body>
+<form name="editor">
+<center>
+  <div id="TabbedPanels1" class="TabbedPanels">
+    <ul class="TabbedPanelsTabGroup">
+      <li class="TabbedPanelsTab" tabindex="0">Web Page</li>
+      <li class="TabbedPanelsTab" tabindex="0">Formatting</li>
+      <li class="TabbedPanelsTab" tabindex="0">Fonts</li>
+      <li class="TabbedPanelsTab" tabindex="0">Headings</li>
+      <li class="TabbedPanelsTab" tabindex="0">Images</li>
+      <li class="TabbedPanelsTab" tabindex="0">Links</li>
+      <li class="TabbedPanelsTab" tabindex="0">Lists</li>
+    </ul>
+    <div class="TabbedPanelsContentGroup">
+      <div class="TabbedPanelsContent">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20%"><div align="center"><b>
+              <input type="button" class="button" onclick="start()" value="Start" />
+            </b></div></td>
+            <td width="20%"><div align="center"><b>
+              <input type="button" class="button" onclick="end()" value="End" />
+            </b></div></td>
+            <td width="20%"><div align="center"><b>
+              <input type="button" class="button" onclick="preview()" value="Preview" />
+            </b></div></td>
+            <td width="20%"><div align="center">
+              <input type="button" class="button" onclick="treset()" value="Start Over" />
+            </div></td>
+            <td width="20%"><div align="center"><i>
+              <input type="button" class="button" onclick="alert('iHTML version\n1.3.4\n\nCodebase by Geoffery Miller, (C) 1997\niHTML interface and design by Corbin Davenport')" value="About" />
+            </i></div></td>
+          </tr>
+        </table>
+        
+
+
+
+
+
+      </div>
+      
+      <div class="TabbedPanelsContent">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><div align="center">
+                <input type="button" class="button" onclick="bold()" value="Bold" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button"
+onclick="italic()" value="Italics" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button" onclick="underline()" value="Underline" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button" onclick="pre()" value="Preformatted" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button" onclick="center()" value="Center" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button" onclick="hbar()" value="Horizontal Bar" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button" onclick="lbreak()" value="Line Break" />
+            </div></td>
+            <td><div align="center">
+                <input type="button" class="button" onclick="pbreak()" value="Paragraph Break" />
+            </div></td>
+          </tr>
+        </table>
+        </div>
+      <div class="TabbedPanelsContent">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="font()" value="Font" />
+            </div></td>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="fontcolor()" value="Color" />
+            </div></td>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="fontsize()" value="Size" />
+            </div></td>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="fontclose()" value=" Close " />
+            </div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="TabbedPanelsContent">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><div align="center">
+              <input type="button" class="button" onclick="head1()" value="1" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="head2()" value="2" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="head3()" value="3" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="head4()" value="4" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="head5()" value="5" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="head6()" value="6" />
+            </div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="TabbedPanelsContent">
+        <input type="button" class="button" onclick="image()" value="Image" />
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="align">Align:</td>
+            <td><div align="center">
+              <input type="button" class="button"onclick="aleft()" value="Left" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="aright()" value="Right" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="atop()" value="Top" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="amid()" value="Middle" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="abottom()" value="Bottom" />
+            </div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="TabbedPanelsContent">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="linkopen()" value="Open" />
+            </div></td>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="linktext()" value="Text" />
+            </div></td>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="linkclose()" value="Close" />
+            </div></td>
+            <td width="25%"><div align="center">
+                <input type="button" class="button" onclick="anchor()" value="Anchor" />
+            </div></td>
+          </tr>
+        </table>
+      </div>
+      <div class="TabbedPanelsContent">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20%" class="align">Ordered:</td>
+            <td width="20%">&nbsp;</td>
+            <td width="20%"><div align="center">
+              <input type="button" class="button"
+onclick="orderopen()" value="Open" />
+            </div></td>
+            <td width="20%"><div align="center">
+              <input type="button" class="button" onclick="li()" value="Item" />
+            </div></td>
+            <td width="20%"><div align="center">
+              <input type="button" class="button" onclick="orderclose()" value="Close" />
+            </div></td>
+          </tr>
+          <tr>
+            <td class="align">Unordered:</td>
+            <td>&nbsp;</td>
+            <td><div align="center">
+              <input type="button" class="button"
+onclick="unorderopen()" value="Open" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="li()" value="Item " />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="unorderclose()" value="Close" />
+            </div></td>
+          </tr>
+          <tr>
+            <td class="align">Definition:</td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="define()" value="Definition" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="defopen()" value="Open" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="defterm()" value="Term" />
+            </div></td>
+            <td><div align="center">
+              <input type="button" class="button" onclick="defclose()" value="Close" />
+            </div></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div id="CollapsiblePanel1" class="CollapsiblePanel">
+    <div class="CollapsiblePanelTab" tabindex="0">Mode</div>
+    <div class="CollapsiblePanelContent">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="4%"><div align="center">
+            <input type="radio" name="mode" value="help"
+onclick="thelp(1)" />
+          </div></td>
+          <td width="96%"><strong>Help</strong></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><i><small>Tells about the element</small></i></td>
+        </tr>
+        <tr>
+          <td><div align="center">
+            <input type="radio" name="mode" value="prompt" onclick="thelp(2)" />
+          </div></td>
+          <td><strong>Prompt</strong></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><i><small>Prompts you for information to put in the element and writes it</small></i></td>
+        </tr>
+        <tr>
+          <td><div align="center">
+            <input type="radio" name="mode" value="basic" checked onclick="thelp(0)" />
+          </div></td>
+          <td><strong>Basic (Defult Mode)</strong></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><i><small>Writes only the elements to the text area</small></i></td>
+        </tr>
+      </table>
+    </div></div>
+    <textarea name="area" cols=50 rows=23 wrap=physical class="text_box"></textarea>
+  
+  </center>
+
+</form>
+<script type="text/javascript">
+<!--
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1", {contentIsOpen:false});
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+/* Start AppleIIGo Code */
+
+body {
+	font: 10px 'Lucida Grande', Geneva, Verdana, Arial, Helvetica, sans-serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #666;
+}
+#appleiigoWindow {
+		width:720px;
+		height:544px;
+	}
+
+	#appleiigoDisplay {
+	position:relative;
+	top:-463px;
+	left:80px;
+	}
+	
+ 
+	#appleiigoLED {
+		position:relative;
+		top:-448px;
+		left:56px;
+		cursor:pointer;
+		opacity:0;
+	}
+
+	#appleiigoLogo {
+		position:relative;
+		top:-484px;
+		left:92px;
+		cursor:pointer;
+	}
+
+/* End AppleIIGo Code */
+/* Start Virtual ][ Code */
+#applet {
+	visibility: visible;
+	position: absolute;
+	top: 80px;
+	left: 0px;
+	width: 100%;
+	height: 384px
+}
+
+#applelogo {
+	visibility: visible;
+	position: absolute;
+	top: 467px;
+	left: 0px;
+	width: 100%;
+	height: 41px
+}
+#applegslogo {
+	visibility: visible;
+	position: absolute;
+	top: 570px;
+	left: 0px;
+	width: 100%;
+	height: 41px
+}
+#activegs {
+	visibility: visible;
+	position: absolute;
+	top: 98px;
+	left: 0px;
+	width: 100%;
+	height: 383px
+}
+.backbutton {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #000000;
+}
+#backbutton  {
+	visibility: visible;
+	position: absolute;
+	top: 44px;
+	left: 0px;
+	width: 100%;
+	height: 30px
+}
+#settingsbox  {
+	visibility: visible;
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 100%;
+	height: 30px
+}
+/* End Virtual ][ Code */

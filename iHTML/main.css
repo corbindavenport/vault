@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.button {
+	width: 100%;
+	font-weight: bold;
+}
+.align {
+	font-style: italic;
+}
+.text_box  {
+	font-family: "Courier New", Courier, monospace;
+	width: 99%;
+	height: 80%
+}
+.text_field {
+	width: 100%;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Minecraft Skin Finder v2</title>
+<script>
+function view(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow","status=no,toolbar=no,menubar=yes,height=200,width=300");
+                preWindow.document.open();
+                preWindow.document.write("<htm;><head><title>" + username + "'s Skin</title></head><body background='bg_main.png' style='color:#FFFFFF'><p><img src='http://minecraft.net/skin/" + username + ".png' alt='Skin' title='" + username + "s Skin' /></p><p>To save " + username + "'s skin, right-click on the image and select Save Image As...</p></body>");
+                preWindow.document.close();
+return false
+}
+function editnovaskin(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow");
+                preWindow.document.open();
+                preWindow.document.location=("http://minecraft.novaskin.me/#http://www.minecraft.net/skin/" + username + ".png");
+                preWindow.document.close();
+return false
+}
+function editminerskin(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow");
+                preWindow.document.open();
+                preWindow.document.location=("http://www.minershoes.com/editor/grab/" + username);
+                preWindow.document.close();
+return false
+}
+function applyskin(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow");
+                preWindow.document.open();
+                preWindow.document.location=("http://www.minecraft.net/profile/skin/remote?url=http://www.minecraft.net/skin/" + username + ".png");
+                preWindow.document.close();
+return false
+}
+</script>
+</head>
+<body style="background:transparent; margin:0px; padding:0px;">
+<div align="center">
+<form name="skin" onSubmit="return jumpit()">
+<table border="0" cellpadding="0" cellspacing="2" width="100%">
+<tr>
+<th colspan="4"><input type="text" size=30 name="username" placeholder="Enter Minecraft user name (like Notch)" style="width:99%"></th>
+</tr>
+<tr>
+<td width="15%"><input type="button" value="View" onClick="view()" style="width:100%"></td>
+<td width="15%"><input type="button" value="Apply" onClick="applyskin()" style="width:100%"></td>
+<td width="40%"><input type="button" value="Edit (minecraft.novaskin.me)" onClick="editnovaskin()" style="width:100%"></td>
+<td width="30%"><input type="button" value="Edit (minershoes.com)" onClick="editminerskin()" style="width:100%"></td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>

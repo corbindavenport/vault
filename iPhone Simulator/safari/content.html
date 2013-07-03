@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style></head>
+
+<body>
+<div align="center">
+<form name="jumpurl1" onSubmit="return jumpit()">
+  <p>
+  <input type="text" size=30 name="jumpurl2" value="http://">
+  </p>
+  <p>
+    <input type="button" value="Go!" onClick="jumpit()">
+    </p>
+</form>
+<script>
+
+/*
+URL jump box
+By JavaScript Kit (http://javascriptkit.com)
+Over 200+ free scripts here!
+*/
+
+function jumpit(){
+window.location=document.jumpurl1.jumpurl2.value
+return false
+}
+</script>
+Popular Sites
+<table width="100%" border="2" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="33%"><div align="center"><a href="http://www.google.com/m">Google</a></div></td>
+    <td width="33%"><div align="center"><a href="http://www.yahoo.com/">Yahoo!</a></div></td>
+    <td width="33%"><div align="center"><a href="http://www.apple.com/">Apple</a></div></td>
+  </tr>
+  <tr>
+    <td><div align="center"><a href="http://wap.nick.com/">Nick</a></div></td>
+    <td><div align="center"><a href="http://www.weather.com/iphone/">Weather.com</a></div></td>
+    <td><div align="center"><a href="http://www.1webapps.com/iphone/Tic-Tac-Toe/">Tic-Tac-Toe</a></div></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

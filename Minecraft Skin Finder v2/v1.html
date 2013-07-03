@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Minecraft Skin Finder</title>
+</head>
+<body style="background:transparent; width:500px; margin:0px; padding:0px;">
+<div align="center">
+<form name="skin" onSubmit="return jumpit()">
+  <input type="text" size=30 name="username" placeholder="Enter Minecraft user name (like Notch)" style="width:500px;">
+  <br />
+  <input type="button" value="View Skin" onClick="view()" style="width:90px;">
+  <input type="button" value="Edit Skin (minecraft.novaskin.me)" onClick="editnovaskin()" style="width:200px;">
+  <input type="button" value="Edit Skin (minershoes.com)" onClick="editminerskin()" style="width:200px;">
+</form>
+<script>
+function view(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow","status=no,toolbar=no,menubar=yes,height=200,width=100");
+                preWindow.document.open();
+                preWindow.document.write("<p><img src='http://minecraft.net/skin/" + username + ".png' alt='Skin' title='" + username + "s Skin' /></p><p>Right-click on the image and select Save Image As...");
+                preWindow.document.close();
+return false
+}
+function editnovaskin(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow");
+                preWindow.document.open();
+                preWindow.document.location=("http://minecraft.novaskin.me/#http://www.minecraft.net/skin/" + username + ".png");
+                preWindow.document.close();
+return false
+}
+function editminerskin(){
+username = document.skin.username.value;
+                preWindow= open("", "preWindow");
+                preWindow.document.open();
+                preWindow.document.location=("http://www.minershoes.com/editor/grab/" + username);
+                preWindow.document.close();
+return false
+}
+</script>
+</div>
+</body>
+</html>

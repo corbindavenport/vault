@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.bottom_bar {
+	background-image: url(images/bottom_bar.png);
+	height: 90px;
+	width: 100%;
+}

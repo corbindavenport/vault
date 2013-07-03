@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.top_bar {
+	background-image: url(images/title.png);
+	padding:0 10px;
+	text-align:center;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+	height:44px;
+	line-height:44px;
+	font-weight:bold;
+	color:#FFF;
+	text-shadow:rgba(0,0,0,0.6) 0 -1px 0;
+	font-size:16pt;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.text_field {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	width: 98%;
+	font-weight: lighter;
+	background-color:#FFFFFF;
+	height: 30px;
+	background-image:url(images/text_field.png);
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image:url(images/app_background.png);
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.button_wide {
+	font-family: Arial, Helvetica, sans-serif;
+	width:100%;
+	font-weight: bold;
+}
+.close_button {
+	height: 0px;
+	width: 0px;
+	border:0px;
+	display:none;
+}
+
+/* These elements stopped being used in iOS programs with iOS version 4. They are kept for compatibility reasons. */
+.qmark_button {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-image: url(images/qmark.png);
+	height: 45px;
+	width: 45px;
+}
+/* End Old Elements */
+
+/* The following elements only work in iOS 5.0 and higher. */
+.blue_bar {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	height: 37px;
+	width: 100%;
+	background-image:url(images/blue_bar.png);
+}

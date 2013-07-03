@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iPad Simulator X</title>
+<script type="text/javascript" src="imagerollover.js">
+
+/***********************************************
+* Image Rollover script- by JavaScript Kit (www.javascriptkit.com)
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+***********************************************/
+
+</script>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/ipad_frame.png);
+	background-repeat: no-repeat;
+}
+#screen {
+	visibility: visible;
+	position: absolute;
+	top: 34px;
+	left: 38px;
+	width:768px;
+	height:1024px;
+}
+#home {
+	visibility: visible;
+	position: absolute;
+	top: 1067px;
+	left: 410px;
+}
+#switch {
+	visibility: visible;
+	position: absolute;
+	top: 11px;
+	left: 13px;
+}
+-->
+</style></head>
+
+<body>
+
+<div id="screen">
+<iframe src="iphone_simulator_os/index.html" style="width: 768px; height: 1024px" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" vspace="0" hspace="0" name="iphone_screen"></iframe></div>
+
+<div id="home"><a href="iphone_simulator_os/home_screen.html" target="iphone_screen"><img src="images/home.png" width="30" height="30" data-over="images/homepressed.png" data-out="images/home.png"/></a></div>
+
+<div id="switch"><a href="index_widescreen.html"><img src="images/transparent.png" width="822" height="18" /></a></div>
+<script type="text/javascript">
+//Following function should be called at the end of the page:
+imagerollover()
+</script>
+</body>
+</html>

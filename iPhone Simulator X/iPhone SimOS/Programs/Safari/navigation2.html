@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script language="JavaScript">
+
+var bV  = parseInt(navigator.appVersion);
+var bNS = navigator.appName=="Netscape";
+var bIE = navigator.appName=="Microsoft Internet Explorer";
+var msg = "Please use the navigation controls at the top of the browser.";
+function nrc(e){if (bNS && e.which > 1){
+alert(msg);
+return false;
+}else if (bIE && (event.button >1)){
+alert(msg);return false;
+}
+}
+document.onmousedown = nrc;
+if (document.layers) window.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+if (bNS && bV<5) window.onmousedown = nrc;
+
+var Now = document.location.search;
+function doNow(){
+if (Now != "") {
+Now=Now.substring(1);
+document.Address.Entry.value = Now;
+}else{
+document.Address.Entry.value = 'http://';
+}
+}
+
+var whereTo;
+var parsing;
+function goThere(){
+whereTo = '';
+whereTo = document.Address.Entry.value;
+parsing = whereTo.substring(0,7);
+parsing = parsing.toLowerCase();
+if (parsing != 'http://') whereTo="http://"+whereTo;
+if (whereTo.length>12){
+    parent.Content.location.href = whereTo;
+    document.Address.Entry.value = whereTo;
+    document.Address.action = 'navigation.html'+'?'+whereTo;    
+}
+}
+
+function doClear(){
+document.Address.Entry.value = "http://";
+}
+
+function doNada(){
+parent.Content.focus();
+}
+
+</script>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/bottom_background.png);
+}
+#back {
+	visibility: visible;
+	position: absolute;
+	top: 10px;
+	left: 23px;
+}
+#forward {
+	visibility: visible;
+	position: absolute;
+	top: 10px;
+	left: 85px;
+}
+#bookmark {
+	visibility: visible;
+	position: absolute;
+	top: 9px;
+	left: 148px;
+}
+-->
+</style>
+</head>
+<body>
+<div id="back"><a href="javascript:history.go(-1);doNada()"><img src="images/back.png" width="22" height="22" border="0" /></a></div>
+<div id="forward"><a href="javascript:history.go(1);doNada()"><img src="images/forward.png" width="22" height="22" border="0" /></a></div>
+<div id="bookmark"><a href="javascript:alert('Sorry, but bookmarking is not yet supported.')"><img src="images/bookmark.png" width="24" height="24" border="0" /></a></div>
+</body>
+</html>

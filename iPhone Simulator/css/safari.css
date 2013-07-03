@@ -1,0 +1,120 @@
+body{
+	text-shadow: 1px 1px #222;
+	color:#DEDEDE;
+	font:normal normal normal 12px arial;
+	background-position: 0px 0px;
+}
+a{color:#fff;font-weight:bold;text-decoration:none;}
+#wrapper{}
+
+.tall #phone			{position:relative;background:url(img/iphone_ver.png) top left repeat-x;width:386px;height:728px;}
+.tall #view			{position:absolute;height:486px;width:320px;}
+.tall #iphone_status	{position:absolute;height:20px; width:320px;top:130px;left:34px;background:url(img/statusbarwebbackground.png) top left repeat-x;}
+	.tall #iphone_bars	{position:absolute;height:12px; width:21px;top:3px;left:6px;}
+	.tall #iphone_attw	{position:absolute;height:12px; width:33px;top:2px;left:32px;color:#606163;font:normal normal bold 11px tahoma,arial;letter-spacing:-1px;text-shadow: 2px 2px #ECF0F3;}
+	.tall #iphone_wifi	{position:absolute;height:12px; width:16px;top:3px;left:70px;background:url(img/statusbarwififull.png) top left no-repeat;}
+	.tall #iphone_time	{position:absolute;height:12px; width:53px;top:2px;left:138px;color:#363636;font:normal normal bold 11px tahoma,arial;letter-spacing:0px;text-shadow: 2px 2px #ECF0F3;}
+	.tall #iphone_batt	{position:absolute;height:12px; width:20px;top:3px;left:295px;background:url(img/statusbarbatteryfull.png) top left no-repeat;}
+	.tall #safari_address	{position:absolute;height:60px; width:320px;top:150px;left:34px;background:url(img/webaddressbarbackground.png) top left repeat-x;}
+	.tall #safari_title{text-shadow: 2px 2px #B9C9D8;position:absolute;height:20px; width:230px;top:1px;left:46px;color:#556572;font:normal normal bold 12px/20px arial;text-align:center;}
+	.tall #safari_plus{position:absolute;height:24px; width:24px;top:25px;left:9px;background:url(img/webaddressbarplusbutton_.png) top left no-repeat;}
+	.tall #safari_addressbglt{position:absolute;height:31px; width:8px;top:22px;left:39px;}
+	.tall #safari_inputw{position:absolute;height:31px; width:227px;top:22px;left:47px;}
+	.tall #safari_input{position:absolute;height:31px;width:227px;top:0px;left:0px;}
+	.tall #safari_location{
+	position:absolute;
+	height:30px;
+	width:227px;
+	top:0px;
+	left:0px;
+	line-height:16px;
+	font-weight:normal;font-size:14px;font-family:helvetica,Arial;
+	border-width:0px;
+	color:#8F9591;
+	background-color:transparent;
+	padding:10px 10px 0px 0px;
+	margin:0;}
+	/*.tall #safari_location{position:absolute;height:23px;width:222px;top:-1px;left:-7px;font-weight:normal;font-size:14px;line-height:16px;font-family:helvetica,Arial;position:absolute;border-width:0px;color:#8F9591;background-color:transparent;padding:9px 10px 0px 10px;margin:0;} */
+	.tall #safari_addressbgrt{position:absolute;height:31px; width:8px;top:22px;left:274px;}
+	.tall #safari_refresh{position:absolute;height:24px; width:24px;top:25px;left:288px;background:url(img/webaddressbarreloadbutto.png) top left no-repeat;}
+.tall #safari_window	{position:absolute;height:365px;width:320px;top:210px;left:34px;background-color:#fff;}
+.tall #safari_toolbar	{position:absolute;height:40px;width:320px;top:574px;left:34px;background:url(img/webtoolbar_bg.png) top left repeat-x;}
+	.tall #safari_toolbar_back{position:absolute;height:22px;width:22px;top:10px;left:28px;background:url(img/webtoolbarbackbutton.png) top left no-repeat;}
+	.tall #safari_toolbar_forw{position:absolute;height:22px;width:22px;top:10px;left:111px;background:url(img/webtoolbarforwardbutton.png) top left no-repeat;}
+	.tall #safari_toolbar_book{position:absolute;height:22px;width:22px;top:10px;left:191px;}/*background:url(/img/webtoolbarbookmarksbutto.png) top left no-repeat;*/
+	.tall #safari_toolbar_tabs{position:absolute;height:22px;width:22px;top:10px;left:275px;}/*background:url(/img/webtoolbarscreensbutton.png) top left no-repeat;*/
+.tall #iphone_corner_tl{position:absolute;height:2px; width:2px;top:0px;left:0px;background:url(img/tl.gif) top left no-repeat;}
+.tall #iphone_corner_tr{position:absolute;height:2px; width:2px;top:0px;left:318px;background:url(img/tr.gif) top right no-repeat;}
+.tall #iphone_corner_bl{position:absolute;height:2px; width:2px;bottom:0px;left:0px;background:url(img/bl.gif) top left no-repeat;}
+.tall #iphone_corner_br{position:absolute;height:2px; width:2px;bottom:0px;left:318px;background:url(img/br.gif) top left no-repeat;}
+.tall #side{left:420px;}
+
+.wide #phone			{position:relative;background:url(img/iphone_hor.png) top left repeat-x;width:728px;height:386px;}
+.wide #view			{position:absolute;height:335px;width:480px;}
+.wide #iphone_status	{position:absolute;height:20px; width:480px;top:31px;left:132px;background:url(img/statusbarwebbackground.png) top left repeat-x;}
+	.wide #iphone_bars	{position:absolute;height:12px; width:21px;top:3px;left:6px;}
+	.wide #iphone_attw	{position:absolute;height:12px; width:33px;top:2px;left:32px;color:#606163;font:normal normal bold 11px tahoma,arial;letter-spacing:-1px;text-shadow: 2px 2px #ECF0F3;}
+	.wide #iphone_wifi	{position:absolute;height:12px; width:16px;top:3px;left:70px;background:url(img/statusbarwififull.png) top left no-repeat;}
+	.wide #iphone_time	{position:absolute;height:12px; width:53px;top:2px;left:228px;color:#363636;font:normal normal bold 11px tahoma,arial;letter-spacing:0px;text-shadow: 2px 2px #ECF0F3;}
+	.wide #iphone_batt	{position:absolute;height:12px; width:20px;top:3px;left:455px;background:url(img/statusbarbatteryfull.png) top left no-repeat;}
+.wide #safari_address	{position:absolute;height:60px; width:480px;top:51px;left:132px;background:url(img/webaddressbarbackground.png) top left repeat-x;}
+	.wide #safari_title{text-shadow: 2px 2px #B9C9D8;position:absolute;height:20px; width:480px;top:1px;left:0px;color:#556572;font:normal normal bold 12px/20px arial;text-align:center;}
+	.wide #safari_plus{position:absolute;height:24px; width:24px;top:25px;left:12px;background:url(img/webaddressbarplusbutton_.png) top left no-repeat;}
+	.wide #safari_addressbglt{position:absolute;height:31px; width:10px;top:22px;left:40px;}
+	.wide #safari_inputw{position:absolute;height:31px; width:386px;top:22px;left:48px;}
+	.wide #safari_input{position:absolute;height:31px;width:386px;top:0px;left:0px;}
+	.wide #safari_location   {position:absolute;height:23px;width:387px;top:0px;left:-7px;font-weight:normal;font-size:14px;line-height:16px;font-family:helvetica,arial;position:absolute;border-width:0px;color:#8F9591;background-color:transparent;padding:9px 6px 0px 8px;margin:0;}
+	.wide #safari_addressbgrt{position:absolute;height:32px; width:10px;top:22px;left:432px;}
+	.wide #safari_refresh{position:absolute;height:24px; width:24px;top:25px;left:447px;background:url(img/webaddressbarreloadbutto.png) top left no-repeat;}
+.wide #safari_window	{position:absolute;height:200px;width:480px;top:111px;left:132px;background-color:#fff;}
+.wide #safari_toolbar	{position:absolute;height:41px;width:480px;top:311px;left:132px;background:url(img/webtoolbar_bg.png) top left repeat-x;}
+	.wide #safari_toolbar_back{position:absolute;height:22px;width:22px;top:10px;left:72px;background:url(img/webtoolbarbackbutton.png) top left no-repeat;}
+	.wide #safari_toolbar_forw{position:absolute;height:22px;width:22px;top:10px;left:172px;background:url(img/webtoolbarforwardbutton.png) top left no-repeat;}
+	.wide #safari_toolbar_book{position:absolute;height:22px;width:22px;top:10px;left:272px;}/*background:url(/img/webtoolbarbookmarksbutto.png) top left no-repeat;*/
+	.wide #safari_toolbar_tabs{position:absolute;height:22px;width:22px;top:10px;left:372px;}/*background:url(/img/webtoolbarscreensbutton.png) top left no-repeat;*/
+.wide #iphone_corner_tl{position:absolute;height:2px; width:2px;top:0px;left:0px;background:url(img/tl.gif) top left no-repeat;}
+.wide #iphone_corner_tr{position:absolute;height:2px; width:2px;top:0px;left:478px;background:url(img/tr.gif) top right no-repeat;}
+.wide #iphone_corner_bl{position:absolute;height:2px; width:2px;bottom:0px;left:0px;background:url(img/bl.gif) top left no-repeat;}
+.wide #iphone_corner_br{position:absolute;height:2px; width:2px;bottom:0px;left:478px;background:url(img/br.gif) top left no-repeat;}
+.wide #side{left:760px;}
+
+.tall #side{position:absolute;top:0px;right:0px;padding:10px 0px;background-color:#000;}
+.wide #side{position:absolute;top:0px;right:0px;left:765px;padding:10px 0px;background-color:#000;}
+.toggle{border-bottom:1px solid #68A6CD;}
+.toggle:hover{cursor:hand;cursor:pointer;}
+
+#sidein{padding:0px 40px;}
+#side h1{color:#90B500;visibility:visible;}
+#side h3{padding:0;margin:25px 0 0 0;color:#68A6CD;}
+#side ul{list-style-type:none;padding:0;margin:0;}
+#side ul li{line-height:22px;}
+#tips li,#faq li{list-style-type:square;}
+#tips ul,#faq ul{list-style-position:inside;}
+#tips a{color:#90B500;font-weight:bold;}
+#tips table{padding-left:10px;margin-top:10px;}
+#tips th{border-bottom:1px solid #90B500;border-top:1px solid #90B500;text-align:left;font-weight:normal;background-color:#000;color:#fff}
+#tips th,#tips td{padding:3px 8px;margin:0;line-height:14px;}
+#tips td{border-bottom:1px solid #92835C;}
+#tips .nm{padding-right:30px;border-right:1px solid #92835C;}
+#tips .nh{padding-right:30px;border-right:1px solid #90B500;}
+li strong{color:#90B500;font-weight:normal;}
+#apps ul li{line-height:20px;}
+#spread{background-color:#fff;display:block;height:18px;line-height:20px;width:220px;margin:20px 0;padding:3px 0px 3px 3px;border:5px solid #90B500;text-align:center;}
+#spread img{padding:0 10px;}
+#footer{padding:70px 0 40px 0;color:#888;font-size:10px;}
+#footer a{color:#888;}
+
+.full	{background:url(img/statusbarservicefull.png) top left no-repeat;}
+.none	{background:url(img/statusbarservicenone.png) top left no-repeat;}
+
+.loadingAon{background:url(img/UIRoundedTextFieldLeft.png) top left no-repeat;}
+.loadingBon{background:url(img/UIRoundedTextFieldMiddle.png) top left repeat-x;}
+.loadingCon{background:url(img/UIRoundedTextFieldRight.png) top left no-repeat;}
+
+.loadingAoff{background:url(img/UIRoundedTextFieldLeftInactive.png) top right no-repeat;}
+.loadingBoff{background:url(img/UIRoundedTextFieldMiddleInactive.png) top right repeat-x;}
+.loadingCoff{background:url(img/UIRoundedTextFieldRightInactive.png) top right no-repeat;}
+
+.loadingAact{background:url(img/UIRoundedTextFieldProgressLeft.png) top left no-repeat;}
+.loadingBact{background:url(img/UIRoundedTextFieldProgressMiddle.png) top left repeat-x;}
+.loadingCact{background:url(img/UIRoundedTextFieldProgressRight.png) top left no-repeat;}

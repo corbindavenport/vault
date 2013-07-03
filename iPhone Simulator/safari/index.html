@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+<head>
+<title>iPhone Simulator - Safari</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="robots" content="index,follow" />
+
+<style type="text/css" media="screen">
+<!--
+#layer2   { visibility: visible; position: absolute; top: 645px; left: 180px; width: 29px; height: 30px }
+--></style>
+		<script language="JavaScript" src="../jquery-1.1.3.1.pack.js"></script>
+<script language="JavaScript" src="../safari.js"></script>
+<link href="../css/safari.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/vnd.microsoft.icon" />
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+}
+-->
+</style></head>
+<body id="docbody" onload="correctPNG();if(event.keyCode == 82){Rotate_Phone(null)}">
+
+<div id="wrapper" class="tall">
+
+<div id="phone">
+<div id="view">
+<div id="iphone_status">
+			<div id="iphone_corner_tl"></div>
+			<div id="iphone_bars" class="full"></div>
+			<div id="iphone_attw">AT&amp;T</div>
+			<div id="iphone_wifi"></div>
+			<div id="iphone_time"><script>document.write(iPhoneDate);</script></div>
+			<div id="iphone_batt"></div>
+			<div id="iphone_corner_tr"></div>
+		</div>
+
+		<div id="safari_address" onmouseover="setScrolling('auto')" onmouseout="setScrolling('no')">
+			<div id="safari_title">Safari</div>
+			<div id="safari_plus"></div>
+			<div id="safari_addressbglt" class="loadingAoff"></div>
+			<div id="safari_inputw">	
+			<label id="safari_input" class="loadingBoff">
+				<input onFocus="this.value=''" value="Enter URL Here.." type="text" id="safari_location" onkeypress="if(event.keyCode == 13){if(this.value.substr(0,7) != 'http://'){this.value='http://'+this.value;}document.getElementById('safari_window').src=this.value;urlHistory[urlCount++]=this.value;urlPos++;goActive();setScrolling('no');}" />
+			</label>
+			</div>
+			<div id="safari_addressbgrt" class="loadingCoff" ></div>
+			<a href="/" id="safari_refresh" onclick="return Safari_Refresh(this)"><img src="../css/img/x.png" width="24" height="24" alt="Refresh" border="0" /></a>
+		</div>
+		</div>
+<iframe id="safari_window" src="" onload="fixWebSite()" scrolling="yes" border="0" frameborder="0" style="" marginwidth="0" marginheight="0"></iframe>
+<div id="safari_toolbar" onmouseover="setScrolling('auto')" onmouseout="setScrolling('no')">
+			<div id="iphone_corner_bl"></div>
+			<a href="javascript:history.go(-1)" id="safari_toolbar_back" title="Go Back"><img src="../css/img/x.png" width="22" height="22" alt="Back" border="0" /></a>	
+			<a href="javascript:history.go(+1)" id="safari_toolbar_forw" title="Go Forward"><img src="../css/img/x.png" width="22" height="22" alt="Forward" border="0" /></a>	
+			<div id="iphone_corner_br"></div>
+	</div>
+	</div>
+
+
+<script>
+</script>
+</script>
+			<div id="layer2">
+				<a href="../index.html"><img src="../home.gif" alt="" height="28" width="27" border="0"></a></div>
+		
+</body>
+</html>

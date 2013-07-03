@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Settings</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url(settings.png);
+	background-repeat: no-repeat;
+	margin-left: 3px;
+	margin-top: 31px;
+	margin-right: 3px;
+	margin-bottom: 31px;
+}
+body,td,th {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+}
+.button {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	width: 98%;
+}
+.text_area {
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	width: 98%;
+	height: 150px;
+}
+-->
+</style>
+	    <script language="JavaScript">
+
+helpstat = false;
+stprompt = true;
+basic = false;
+
+function thelp(swtch){
+        if (swtch == 1){
+                basic = false;
+                stprompt = false;
+                helpstat = true;
+        }
+        else if (swtch == 0) {
+                helpstat = false;
+                stprompt = false;
+                basic = true;
+        }
+        else if (swtch == 2) {
+                helpstat = false;
+                basic = false;
+                stprompt = true;
+        }
+}
+function preview(){
+        if (helpstat) {
+                alert("Preview the document. (You can save the document to your computer by clicking Preview and going to File > Save As...)");
+        }
+        else {
+                temp = document.editor.area.value;
+                preWindow= open("preWindow");
+                preWindow.document.open();
+                preWindow.document.write(temp);
+                preWindow.document.close();
+        }
+}
+
+// --> De-Hide
+</script>
+</head>
+
+<body>Enter settings for the Apple ][gs machine. The ActiveGS plugin is required to run  Apple][gs programs. <form name="editor"><div align="center"><textarea name="area" cols=65 rows=10 wrap=physical class="text_area">&lt;html&gt;&lt;head&gt;&lt;title&gt;Virtual ][: Apple][gs&lt;/title&gt;&lt;script src=&quot;http://activegs.freetoolsassociation.com/deployactivegs.js&quot;&gt;&lt;/script&gt;&lt;link href=&quot;../../../../appleiigo.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;center&gt;&lt;/center&gt;&lt;div id=&quot;applegslogo&quot;&gt;&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../../../../apple2gs.png&quot; alt=&quot;&quot; width=&quot;142&quot; height=&quot;39&quot; border=&quot;0&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div id=&quot;activegs&quot;&gt;&lt;div align=&quot;center&quot;&gt;
+	
+	&lt;script&gt;
+
+var p = { 
+
+&quot;parameters&quot; : { &quot;Slot51&quot; : &quot;ENTER DISK 1 HERE&quot;,
+		 &quot;Slot52&quot; : &quot;ENTER DISK 2 HERE&quot;,
+		 &quot;BootSlot&quot; : &quot;5&quot;,
+		 &quot;Speed&quot; : &quot;3&quot;,
+		 &quot;BramParam&quot; : &quot;background:dark-blue;border:dark-blue&quot;}};
+		 activeGS.install(p);
+
+&lt;/script&gt;
+
+&lt;/div&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;../../../SKIN.png&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;&lt;/html&gt;</textarea>
+</div>
+
+	  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="50%"><div align="center">
+          <input name="button2" type="button" class="button" id="button2" accesskey="r" onClick="JavaScript:window.location.reload()" value="Reset Settings">
+        </div></td>
+        <td width="50%"><div align="center">
+          <input name="button" type="button" class="button" id="button" accesskey="l" onClick="preview()" value="Launch">
+        </div></td>
+      </tr>
+    </table>
+</form>
+</body>
+
+
+</html>

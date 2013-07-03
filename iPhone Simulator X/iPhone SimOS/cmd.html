@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="System/iWebApp.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="title">Terminal</div>
+IPhone SimOS v. <script src="System/version.js"></script> (Based on IOS-DOS 5.2)
+<p><form name="jumpurl1" onSubmit="return jumpit()"> 
+<table width="98%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="30">C:&gt;/</td>
+    <td><input name="jumpurl2" type="text" class="wide" onFocus="this.value=''" value="_" size=50 /></td>
+  </tr>
+</table>
+<script>
+function jumpit(){
+window.location=document.jumpurl1.jumpurl2.value
+return false
+}
+</script></form></p>
+</body>
+</html>

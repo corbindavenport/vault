@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="generator" content="Adobe GoLive">
+		<style type="text/css" media="screen">
+		<!--
+		body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(AppleIIGo.png);
+	background-repeat: no-repeat;
+}
+body,td,th {
+	font-family: Courier New, Courier, monospace;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+#backbutton {
+	visibility: visible;
+	position: absolute;
+	top: 46px;
+	left: 79px;
+	width: 120px
+}
+-->
+		</style>
+		<csscriptdict import>
+			<script type="text/javascript" src="file:///Users/corbin/Library/Preferences/Adobe/GoLive/Settings7/JScripts/GlobalScripts/CSScriptLib.js"></script>
+		</csscriptdict>
+		<link href="main.css" rel="stylesheet" type="text/css">
+	    
+	    <script language="JavaScript">
+
+helpstat = false;
+stprompt = true;
+basic = false;
+
+function thelp(swtch){
+        if (swtch == 1){
+                basic = false;
+                stprompt = false;
+                helpstat = true;
+        }
+        else if (swtch == 0) {
+                helpstat = false;
+                stprompt = false;
+                basic = true;
+        }
+        else if (swtch == 2) {
+                helpstat = false;
+                basic = false;
+                stprompt = true;
+        }
+}
+function preview(){
+        if (helpstat) {
+                alert("Preview the document. (You can save the document to your computer by clicking Preview and going to File > Save As...)");
+        }
+        else {
+                temp = document.editor.area.value;
+                preWindow= open("preWindow");
+                preWindow.document.open();
+                preWindow.document.write(temp);
+                preWindow.document.close();
+        }
+}
+
+// --> De-Hide
+</script>
+
+
+    </head>
+
+	<body>
+<div id="layer1"><form name="editor">
+	Enter your prefered settings for the AppleIIGo applet and click Launch.
+    <hr>
+	<textarea name="area" cols=65 rows=10 wrap=physical class="text_area">&lt;html&gt;&lt;head&gt;&lt;link href=&quot;appleiigo.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;&lt;title&gt;Virtual ][: RUNNING&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id=&quot;applet&quot;&gt;&lt;div align=&quot;center&quot;&gt;
+              
+            &lt;applet archive=&quot;AppleIIGo.jar&quot; code=&quot;AppleIIGo.class&quot; name=&quot;appleiigo&quot; width=&quot;560&quot; height=&quot;384&quot; alt=&quot;Virtual ][ Screen&quot;&gt;
+            &lt;param name=&quot;boxbgcolor&quot; value=&quot;black&quot; /&gt;
+            &lt;param name=&quot;boxfgcolor&quot; value=&quot;white&quot; /&gt;
+            &lt;param name=&quot;cpuRom&quot; value=&quot;apple2e.rom&quot;/&gt;
+            &lt;param name=&quot;cpuSpeed&quot; value=&quot;1000&quot;/&gt;
+            &lt;param name=&quot;cpuPaused&quot; value=&quot;false&quot;/&gt;
+            &lt;param name=&quot;cpuDebugEnabled&quot; value=&quot;false&quot;/&gt;
+            &lt;param name=&quot;cpuStepMode&quot; value=&quot;false&quot;/&gt;
+            &lt;param name=&quot;keyboardUppercaseOnly&quot; value=&quot;true&quot;/&gt;
+            &lt;param name=&quot;displayFocusOnStart&quot; value=&quot;true&quot;/&gt;
+            &lt;param name=&quot;displayScale&quot; value=&quot;2&quot;/&gt;
+            &lt;param name=&quot;displayRefreshRate&quot; value=&quot;10&quot;/&gt;
+            &lt;param name=&quot;displayColorMode&quot; value=&quot;1&quot;/&gt;
+            &lt;param name=&quot;displayStatMode&quot; value=&quot;false&quot;/&gt;
+            &lt;param name=&quot;displayGlare&quot; value=&quot;false&quot;/&gt;
+            &lt;param name=&quot;soundVolume&quot; value=&quot;4&quot;/&gt;
+            &lt;param name=&quot;diskWritable&quot; value=&quot;true&quot;/&gt;
+            &lt;param name=&quot;diskDrive1&quot; value=&quot;ENTER 1ST DISK IMAGE HERE.&quot;/&gt;
+            &lt;param name=&quot;diskDrive2&quot; value=&quot;ENTER 2ND DISK IMAGE HERE.&quot;/&gt;
+                &lt;/applet&gt;
+              
+              &lt;/div&gt;&lt;/div&gt;&lt;div id=&quot;applelogo&quot;&gt;&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;apple2e.png&quot; alt=&quot;&quot; border=&quot;0&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;AppleIIGo.png&quot; width=&quot;720&quot; height=&quot;544&quot;&gt;&lt;/div&gt;&lt;/body&gt;</textarea>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="50%"><div align="center">
+          <input name="button2" type="button" class="button" id="button2" accesskey="r" onClick="JavaScript:window.location.reload()" value="Reset Settings">
+        </div></td>
+        <td width="50%"><div align="center">
+          <input name="button" type="button" class="button" id="button" accesskey="l" onClick="preview()" value="Launch">
+        </div></td>
+      </tr>
+    </table>
+		</form></div>
+		<div id="backbutton">
+		  <input name="button3" type="button" class="button" id="button3" accesskey="r" onClick="javascript:location='home.html';doNada()" value="&lt; Back">
+		</div>
+</body>
+
+</html>
