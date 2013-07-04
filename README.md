@@ -9,7 +9,7 @@ All of these are open source under the GPLv3 license.
 
 The Projects
 =======
-* Virtual IIgs (11/2/2009) - An interface for the [ActiveGS](http://activegs.freetoolsassociation.com/) browser plugin. Needs the ActiveGS plugin to function.
+* **Virtual IIgs (11/2/2009)** - An interface for the [ActiveGS](http://activegs.freetoolsassociation.com/) browser plugin. Needs the ActiveGS plugin to function.
 * Virtual II (11/4/2009) - An interface for the [AppleIIGo](http://code.google.com/p/appleiigo/) Apple II Java emulator. Includes pre-configured ProDOS and Contiki machines.
 * iHTML (2/3/2010) - A JavaScript HTML editor with a built-in preview tool. Probably the most functional project in The Vault.
 * iStickman (2/20/2010) - Experiment with Adobe Flash, click the stick guy to make him do stuff. Animated with Flipnote Studio for the Nintendo DSi.
