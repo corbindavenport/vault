@@ -1,0 +1,9 @@
+{
+	"id": "com.crosseyeinc.ilight",
+	"version": "2.0.0",
+	"vendor": "Crosseye, inc.",
+	"type": "web",
+	"main": "index.html",
+	"title": "iLight",
+	"icon": "icon.png"
+}

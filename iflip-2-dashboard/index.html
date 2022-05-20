@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>iFlip</title>
+<style type="text/css">
+<!--
+body {
+	background-color:transparent;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<style type="text/css">
+
+.jsclass body .randomcontent{ /*Do NOT remove! CSS to hide random contents in JS enabled browsers*/
+display: none;
+}
+
+</style>
+<script type="text/javascript">
+
+/***********************************************
+* Random Content (from DIVs) script- by JavaScript Kit (www.javascriptkit.com)
+* This notice must stay intact for usage
+* Visit JavaScript Kit at http://www.javascriptkit.com/ for this script and 100s more
+***********************************************/
+
+if (document.getElementById)
+document.documentElement.className = 'jsclass'; //hide content for DOM capable browsers
+
+
+var randomcontentdisplay={
+	divholders:new Object(),
+	masterclass: "randomcontent",
+
+	init:function(){
+		if (!document.getElementById)
+			return
+		var alldivs=document.getElementsByTagName("div")
+		var randomcontentsearch=new RegExp(this.masterclass+"\\s+(group\\d+)", "i") //check for CSS class="randomcontent groupX" (x=integer)
+		for (var i=0; i<alldivs.length; i++){
+			if (randomcontentsearch.test(alldivs[i].className)){
+				if (typeof this.divholders[RegExp.$1]=="undefined") //if array to hold this group of divs doesn't exist yet
+					this.divholders[RegExp.$1]=new Array() //create array first
+					this.divholders[RegExp.$1].push(alldivs[i]) //add this div to the array
+			}
+		}
+	this.showone()
+	},
+
+	showone:function(){
+		for (group in this.divholders){ //loop thru each array within object
+			var chosenOne=Math.floor(Math.random()*this.divholders[group].length) //randomly pick one entry from array
+			this.divholders[group][chosenOne].style.display="block" //display content corresponding to the chosen entry
+		}
+	}
+}
+
+</script>
+</head>
+<body>
+<div class="randomcontent group2"><a href="JavaScript:window.location.reload()"><img src="quarter_front.png" alt="" height="133" width="135" border="0"/></a></div>
+<div class="randomcontent group2"><a href="JavaScript:window.location.reload()"><img src="quarter_back.png" alt="" height="133" width="135" border="0"/></a></div>
+<script type="text/javascript">
+//Call this following all random contents HTML on the page:
+randomcontentdisplay.init()
+</script>
+</body>
+</html>
