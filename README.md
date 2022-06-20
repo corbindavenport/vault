@@ -1,4 +1,4 @@
-This is a collection of software projects I made when I was 10-13 years old. Most of them can run in a browser from [corbindavenport.github.io/vault](http://corbindavenport.github.io/vault/).
+This is a collection of my oldest software projects that I could find and weren't already stored on a separate repository. Most of them can run in a browser from [corbindavenport.github.io/vault](http://corbindavenport.github.io/vault/).
 
 ### [Virtual IIgs (11/2/2009)](virtual-2gs/)
 Front-end for the [ActiveGS](http://activegs.freetoolsassociation.com/) browser plugin. Needs the ActiveGS plugin to function.
